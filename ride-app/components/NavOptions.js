@@ -25,7 +25,7 @@ const NavOptions = () => {
             horizontal
             renderItem={({ item }) => (
                 <TouchableOpacity>
-                    <View>
+                    <View> 
                         <Image 
                         style={{width:100, height:120}}
                         source={item.image}
