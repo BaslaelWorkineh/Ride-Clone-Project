@@ -1,34 +1,43 @@
-import { FlatList, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Text, TouchableOpacity, View, Image } from 'react-native'
 import React from 'react'
 
 const data = [
     {
-    id:"123",
-    title:"Get a ride",
-    image: "https://links.papareact.com/3pn"
+        id: "123",
+        title: "Get a ride",
+        image: require("../screens/Images/ride.png"),
+        screen: "MapScreen",
     },
     {
-        id:"456",
-        title:"Order food",
-        image: "https://links.papareact.com/28w"
+        id: "456",
+        title: "Order food",
+        image: require("../screens/Images/ride.png"),
+        screen: "EatsScreen",
     }
 
 ];
 
 const NavOptions = () => {
 
-  return (
-    <FlatList
-     data={data}
-     horizontal
-     renderItem={({item})=>{
-        <TouchableOpacity>
-            <Text>{item.title}</Text>
-        </TouchableOpacity>
-     }}
-    
-    />
-  )
-}
+    return (
+        <FlatList
+            data={data}
+            horizontal
+            renderItem={({ item }) => (
+                <TouchableOpacity>
+                    <View>
+                        <Image 
+                        style={{width:100, height:120}}
+                        source={item.image}
+                        />
+                        <Text>{item.title}</Text>
 
-export default NavOptions
+                    </View>
+                </TouchableOpacity>
+            )}
+
+        />
+    );
+};
+
+export default NavOptions;
