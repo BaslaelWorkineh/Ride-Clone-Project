@@ -1,5 +1,6 @@
 import { FlatList, Text, TouchableOpacity, View, Image } from 'react-native'
 import React from 'react'
+import tw from "twrnc"
 
 const data = [
     {
@@ -24,14 +25,20 @@ const NavOptions = () => {
             data={data}
             horizontal
             renderItem={({ item }) => (
-                <TouchableOpacity>
+                <TouchableOpacity style={tw`p-2 pl-6 pb-8 bg-gray-200 m-2 w-40`}>
                     <View> 
                         <Image 
                         style={{width:100, height:120}}
                         source={item.image}
                         />
-                        <Text>{item.title}</Text>
-
+                        <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
+                        {/* <Icon 
+                            style={tw`p-2 bg-black`}
+                            color='white'
+                            name='arrowright'
+                            type='antdesign'
+                        
+                        /> */}
                     </View>
                 </TouchableOpacity>
             )}
